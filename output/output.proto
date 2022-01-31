@@ -1,0 +1,19 @@
+syntax="proto3";
+
+package output;
+
+option go_package = "/output";
+import "google/protobuf/empty.proto";
+
+message OutputRequest{
+  string title = 1;
+}
+
+message Output{
+  string id = 1;
+  string title = 2;
+}
+
+service OutputService{
+  rpc SendOutput(OutputRequest) returns (google.protobuf.Empty) {}
+}
